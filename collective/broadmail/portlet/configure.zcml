@@ -1,0 +1,27 @@
+<configure
+  i18n_domain="collective.broadmail"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns="http://namespaces.zope.org/zope"
+  >
+
+  <plone:portlet
+    addview="collective.broadmail.portlet.subscribe.AddForm"
+    assignment="collective.broadmail.portlet.subscribe.Assignment"
+    edit_permission="zope2.View"
+    editview="collective.broadmail.portlet.subscribe.EditForm"
+    interface="collective.broadmail.portlet.subscribe.ISubscribeNewsletterPortlet"
+    name="portlets.SubscribeBroadmail"
+    renderer="collective.broadmail.portlet.subscribe.Renderer"
+    view_permission="zope2.View"
+    />
+
+    <!-- Set empty widgets prefix for our z3c forms to have form field names the
+         same as on formlib forms -->
+    <adapter
+        for=".subscribe.ISubscribeNewsletterForm
+             z3c.form.interfaces.IFormLayer
+             *"
+        factory=".z3cwidgets.EmptyPrefixFieldWidgets"
+        />
+
+</configure>

@@ -12,9 +12,7 @@
 
   <!-- Register a resource directory from which we can deploy static
    resource files. -->
-  <browser:resourceDirectory
-    name="collective.broadmail"
-    directory="resources" />
+  <browser:resourceDirectory name="collective.broadmail" directory="resources" />
 
   <i18n:registerTranslations directory="locales" />
 
@@ -22,12 +20,15 @@
        in Plone -->
   <genericsetup:registerProfile
       name="default"
-      title="Subscription portlet for optivo broadmail email marketing service."
+      title="collective.broadmail"
       directory="profiles/default"
-      description="Extension profile for Subscription portlet for optivo broadmail email marketing service."
+      description="Subscription portlet for optivo broadmail email marketing service."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
   <!-- -*- extra stuff goes here -*- -->
+
+  <include package=".portlet" />
+
 
 </configure>

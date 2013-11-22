@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<portlets
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  >
+
+  <portlet
+    addview="portlets.SubscribeBroadmail"
+    title="Broadmail Subscription Portlet"
+    description=""
+    i18n:attributes="
+      title;
+      description"
+    >
+    <for interface="plone.app.portlets.interfaces.IColumn" />
+  </portlet>
+
+</portlets>
