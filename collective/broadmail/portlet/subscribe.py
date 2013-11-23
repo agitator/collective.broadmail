@@ -119,7 +119,7 @@ class ISubscribeNewsletterForm(Schema):
         required=True,
     )
 
-    email = TextLine(
+    bmRecipientId = TextLine(
         title=_(u"E-mail address"),
         required=True,
     )
@@ -145,8 +145,17 @@ class SubscribeNewsletterForm(Form):
 
     def updateWidgets(self):
         super(self.__class__, self).updateWidgets()
+        self.prefix = ''
 
-        self.widgets['email'].size = 20
+        self.widgets['bmRecipientId'].size = 20
+        self.widgets['firstname'].size = 20
+        self.widgets['name'].size = 20
+
+        self.widgets['salutation'].name = 'salutation'
+        self.widgets['firstname'].name = 'firstname'
+        self.widgets['name'].name = 'name'
+        self.widgets['bmRecipientId'].name = 'bmRecipientId'
+        self.widgets['bmOptInId'].name = 'bmOptInId'
 
     @property
     def action(self):

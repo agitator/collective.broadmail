@@ -18,10 +18,17 @@
     <!-- Set empty widgets prefix for our z3c forms to have form field names the
          same as on formlib forms -->
     <adapter
-        for=".subscribe.ISubscribeNewsletterForm
+        for=".subscribe.SubscribeNewsletterForm
              z3c.form.interfaces.IFormLayer
              *"
         factory=".z3cwidgets.EmptyPrefixFieldWidgets"
+        />
+
+    <adapter
+        for=".subscribe.SubscribeNewsletterForm
+             z3c.form.interfaces.IFormLayer
+             *"
+        factory=".z3cwidgets.EmptyPrefixForm"
         />
 
 </configure>
