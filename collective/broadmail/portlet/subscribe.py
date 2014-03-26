@@ -1,4 +1,29 @@
 from Acquisition import aq_inner
+from zope.interface import alsoProvides
+from z3c.form.interfaces import IFormLayer
+from plone.z3cform.interfaces import IWrappedForm
+from plone.z3cform import z2
+from Products.CMFCore.utils import getToolByName
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
+from zope.interface import implements
+from zope import schema
+
+from z3c.form import field
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
+
+from plone.memoize import ram
+from plone.memoize.compress import xhtml_compress
+from plone.memoize.instance import memoize
+
+from plone.portlets.interfaces import IPortletDataProvider
+
+from plone.app.portlets import PloneMessageFactory as _
+from plone.app.portlets.cache import render_cachekey
+from plone.app.portlets.portlets import base
+
+
+from Acquisition import aq_inner
 #from Products.CMFPlone.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.broadmail import _
@@ -7,7 +32,6 @@ from plone.app.portlets.portlets import base
 #from plone.app.vocabularies.catalog import SearchableTextSourceBinder
 from plone.directives.form import Form
 from plone.directives.form import Schema
-from plone.portlets.interfaces import IPortletDataProvider
 from plone.z3cform.layout import FormWrapper
 from z3c.form import button
 from z3c.form.field import Fields
@@ -16,8 +40,10 @@ from z3c.form.field import Fields
 from zope.formlib import form
 from zope.interface import implements
 from zope.schema import Choice
+from zope.schema import Bool
 #from zope.schema import Text
 from zope.schema import TextLine
+
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
@@ -124,10 +150,28 @@ class ISubscribeNewsletterForm(Schema):
         required=True,
     )
 
+#    form.mode(bmOptInId='hidden')
     bmOptInId = TextLine(
         title=_(u"Opt-In-Id"),
         required=True,
     )
+
+    bmFailOnUnsubscribe = Bool(
+        title=_(u"FailOnUnsubscribe"),
+        required=True,
+    )
+
+    bmOverwrite = Bool(
+        title=_(u"Overwrite"),
+        required=True,
+    )
+
+# ### default values ###
+# def bmOptInIdDefault(self):
+#     return ['F']
+# provideAdapter(ComputedWidgetAttribute(
+#     bmOptInIdDefault,
+#     field=ISubscribeNewsletterForm['bmOptInId']), name='default')
 
 
 class SubscribeNewsletterForm(Form):
@@ -139,7 +183,7 @@ class SubscribeNewsletterForm(Form):
     def __init__(self, context, request, data=None):
         """
         """
-        super(Form, self).__init__(context, request)
+        super(form.Form, self).__init__(context, request)
 
         self.data = data
 
@@ -219,7 +263,7 @@ class Renderer(base.Renderer):
 
 class AddForm(base.AddForm):
 
-    form_fields = form.Fields(ISubscribeNewsletterPortlet)
+    form_fields = Fields(ISubscribeNewsletterPortlet)
     label = _(u"Add Broadmail Subscription Portlet")
     description = _(u"This portlet displays a Broadmail Subscription Portlet.")
 
@@ -231,6 +275,6 @@ class AddForm(base.AddForm):
 
 
 class EditForm(base.EditForm):
-    form_fields = form.Fields(ISubscribeNewsletterPortlet)
+    form_fields = Fields(ISubscribeNewsletterPortlet)
     label = _(u"Edit Broadmail Subscribe Portlet")
     description = _(u"This portlet displays a Broadmail Subscription Portlet.")

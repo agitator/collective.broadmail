@@ -3,4 +3,4 @@ Introduction
 
 
 
-This product may contain traces of nuts.
+Subscription Portlet for Optivo Broadmail.
