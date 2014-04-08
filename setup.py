@@ -28,7 +28,7 @@ setup(name='collective.broadmail',
           'setuptools',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
-          # -*- Extra requirements: -*-
+          'yafowil.plone',
       ],
       entry_points="""
       # -*- Entry points: -*-

@@ -1,50 +1,38 @@
 <configure
   i18n_domain="collective.broadmail"
   xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:browser="http://namespaces.zope.org/browser"
   xmlns="http://namespaces.zope.org/zope"
   xmlns:z3c="http://namespaces.zope.org/z3c"
   >
 
-  <plone:portlet
+  <!--plone:portlet
     addview="collective.broadmail.portlet.subscribe.AddForm"
     assignment="collective.broadmail.portlet.subscribe.Assignment"
     edit_permission="zope2.View"
     editview="collective.broadmail.portlet.subscribe.EditForm"
-    interface="collective.broadmail.portlet.subscribe.ISubscribeNewsletterPortlet"
+    interface="collective.broadmail.portlet.subscribe.ISubscriptionPortlet"
     name="portlets.SubscribeBroadmail"
     renderer="collective.broadmail.portlet.subscribe.Renderer"
     view_permission="zope2.View"
-    />
+    /-->
 
-  <!-- Set empty widgets prefix for our z3c forms to have form field names the
-       same as on formlib forms -->
-  <adapter
-      for=".subscribe.SubscribeNewsletterForm
-           z3c.form.interfaces.IFormLayer
-           *"
-      factory=".z3cwidgets.EmptyPrefixFieldWidgets"
-      />
-
-  <adapter
-      for=".subscribe.SubscribeNewsletterForm
-           z3c.form.interfaces.IFormLayer
-           *"
-      factory=".z3cwidgets.EmptyPrefixForm"
+  <plone:portlet
+      name="portlets.SubscribeBroadmail"
+      interface=".subscribe.ISubscriptionPortlet"
+      assignment=".subscribe.Assignment"
+      renderer=".subscribe.Renderer"
+      addview=".subscribe.AddForm"
+      editview=".subscribe.EditForm"
       />
 
 
-  <z3c:widgetTemplate
-      mode="input"
-      widget="z3c.form.interfaces.ISelectWidget"
-      layer="collective.broadmail.interfaces.IBroadmailSubscription"
-      template="select_input_no_prefix.pt"
-      />
 
-  <z3c:widgetTemplate
-      mode="input"
-      widget="z3c.form.interfaces.ISingleCheckBoxWidget"
-      layer="collective.broadmail.interfaces.IBroadmailSubscription"
-      template="checkbox_input_no_prefix.pt"
-      />
+  <!--browser:page
+      for="*"
+      name="subscriptionform"
+      class=".form.SubscriptionForm"
+      permission="zope2.View"
+      layer="collective.broadmail.interfaces.IBroadmailSubscription"/-->
 
 </configure>

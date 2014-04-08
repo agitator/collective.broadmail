@@ -10,24 +10,12 @@
       <span class="portletTopRight"></span>
     </dt>
     <dd class="portletItem">
-      <form tal:replace="structure view/form_wrapper" />
+      <!--form tal:replace="structure view/form_wrapper" /-->
+      <!--tal:subscribe replace="structure context/@@subscriptionform" /-->
+
+
+      <!--tal:form replace="structure python:view.controller.rendered" /-->
+
     </dd>
-    <!--dd
-      class="portletFooter"
-      tal:define="newsletters view/newsletters"
-      >
-      <span class="portletBottomLeft"></span>
-      <a 
-        tal:attributes="
-          alt newsletters/Description;
-          href newsletters/getURL;
-          title newsletters/Title
-        "
-        i18n:translate="label_visit_archives"
-        >
-        Visit our archives
-      </a>
-      <span class="portletBottomRight"></span>
-    </dd-->
   </dl>
 </tal:block>
