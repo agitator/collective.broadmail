@@ -11,7 +11,7 @@
   <includeDependencies package="." />
 
   <!-- Register a resource directory from which we can deploy static
-   resource files. -->
+       resource files. -->
   <browser:resourceDirectory name="collective.broadmail" directory="resources" />
 
   <i18n:registerTranslations directory="locales" />
@@ -29,6 +29,5 @@
   <!-- -*- extra stuff goes here -*- -->
 
   <include package=".portlet" />
-
 
 </configure>

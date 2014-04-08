@@ -2,26 +2,23 @@
   i18n_domain="collective.broadmail"
   xmlns:plone="http://namespaces.plone.org/plone"
   xmlns="http://namespaces.zope.org/zope"
-  xmlns:browser="http://namespaces.zope.org/browser"
-  >
+  xmlns:browser="http://namespaces.zope.org/browser">
 
   <plone:portlet
-    addview="collective.broadmail.portlet.subscribe.AddForm"
-    assignment="collective.broadmail.portlet.subscribe.Assignment"
+    addview=".subscribe.AddForm"
+    assignment=".subscribe.Assignment"
     edit_permission="zope2.View"
-    editview="collective.broadmail.portlet.subscribe.EditForm"
-    interface="collective.broadmail.portlet.subscribe.ISubscribeNewsletterPortlet"
+    editview=".subscribe.EditForm"
+    interface=".subscribe.ISubscribeNewsletterPortlet"
     name="portlets.SubscribeBroadmail"
-    renderer="collective.broadmail.portlet.subscribe.Renderer"
-    view_permission="zope2.View"
-    />
-
+    renderer=".subscribe.Renderer"
+    view_permission="zope2.View" />
 
   <browser:page
-      for="*"
-      name="subscriptionform"
-      class=".form.SubscriptionForm"
-      permission="zope2.View"
-      />
+    for="*"
+    name="subscriptionform"
+    class=".form.SubscriptionForm"
+    permission="zope2.View"
+    layer="..interfaces.IBroadmailSubscription" />
 
 </configure>

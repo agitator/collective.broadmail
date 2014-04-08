@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <layers>
-    <layer name="collective.broadmail.layer"
+
+    <layer
+      name="collective.broadmail.layer"
       interface="collective.broadmail.interfaces.IBroadmailSubscription" />
+
 </layers>

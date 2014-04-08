@@ -1,18 +1,24 @@
 <tal:block i18n:domain="collective.broadmail">
+
   <dl class="portlet portletsSubscribeNewsletter">
+
     <dt class="portletHeader">
+
       <span class="portletTopLeft"></span>
       <span class="tile"
-         tal:content="view/title"
-         >
+            tal:content="view/title">
          Title
       </span>
       <span class="portletTopRight"></span>
+
     </dt>
+
     <dd class="portletItem">
 
-      <!--tal:form replace="structure python:view.controller.rendered" /-->
+      <tal:subscriptionform replace="structure contect/@@subscriptionform" />
 
     </dd>
+
   </dl>
+
 </tal:block>

@@ -5,8 +5,6 @@ from plone.portlets.interfaces import IPortletDataProvider
 from zope.formlib import form
 from zope.interface import implements
 from zope.schema import TextLine
-from zope.schema.vocabulary import SimpleTerm
-from zope.schema.vocabulary import SimpleVocabulary
 
 
 class ISubscribeNewsletterPortlet(IPortletDataProvider):
@@ -52,35 +50,7 @@ class Assignment(base.Assignment):
         return self.name or _(u'Our newsletter')
 
 
-# formats = SimpleVocabulary(
-#     [
-#         SimpleTerm(
-#             title=_(u"HTML"),
-#             value=u"HTML",
-#         ),
-#         SimpleTerm(
-#             title=_(u"Text"),
-#             value=u"Text",
-#         ),
-#     ]
-# )
-
-salutation = SimpleVocabulary(
-    [
-        SimpleTerm(
-            title=_(u"Mr."),
-            value=u"male",
-        ),
-        SimpleTerm(
-            title=_(u"Ms."),
-            value=u"female",
-        ),
-    ]
-)
-
-
 class Renderer(base.Renderer):
-
     render = ViewPageTemplateFile('subscribe.pt')
 
     def __init__(self, *args):
@@ -96,7 +66,6 @@ class Renderer(base.Renderer):
 
 
 class AddForm(base.AddForm):
-
     form_fields = form.Fields(ISubscribeNewsletterPortlet)
     label = _(u"Add Broadmail Subscription Portlet")
     description = _(u"This portlet displays a Broadmail Subscription Portlet.")

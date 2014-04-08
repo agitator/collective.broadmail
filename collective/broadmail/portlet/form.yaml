@@ -3,24 +3,16 @@ name: subscription_form
 props:
     action: context.form_action
 widgets:
-- title:
-    factory: label:field:error:text
-    value:
+- email:
+    factory: label:field:error:email
     props:
-        label: i18n:Title
-        required: True
-        required_message: No title given
-- description:
-    factory: label:field:textarea
-    value:
-    props:
-        label: i18n:Description
-        rows: 5
+        label: i18n:Email
+        required: i18n:No email address given
 - save:
     factory: submit
     props:
-        action: save
+        action: subscribe
         expression: True
-        handler: context.save
+        handler: context.subscribe
         next: context.next
-        label: i18n:Save
+        label: i18n:Subscribe
