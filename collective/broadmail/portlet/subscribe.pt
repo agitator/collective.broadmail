@@ -15,7 +15,7 @@
 
     <dd class="portletItem">
 
-      <tal:subscriptionform replace="structure contect/@@subscriptionform" />
+      <tal:subscriptionform replace="structure context/@@subscriptionform" />
 
     </dd>
 

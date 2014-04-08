@@ -21,4 +21,25 @@
     permission="zope2.View"
     layer="..interfaces.IBroadmailSubscription" />
 
+  <browser:page
+    for="*"
+    name="subscription_ok"
+    template="success.pt"
+    permission="zope2.View"
+    layer="..interfaces.IBroadmailSubscription" />
+
+  <browser:page
+    for="*"
+    name="subscription_duplicate"
+    template="duplicate.pt"
+    permission="zope2.View"
+    layer="..interfaces.IBroadmailSubscription" />
+
+  <browser:page
+    for="*"
+    name="subscription_failed"
+    template="failed.pt"
+    permission="zope2.View"
+    layer="..interfaces.IBroadmailSubscription" />
+
 </configure>

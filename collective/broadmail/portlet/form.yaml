@@ -3,6 +3,21 @@ name: subscription_form
 props:
     action: context.form_action
 widgets:
+- salutation:
+    factory: label:field:select
+    props:
+        label: i18n:Salutation
+        vocabulary: expr:context.salutation_vocab
+- firstname:
+    factory: label:field:error:text
+    props:
+        label: i18n:First name
+        required: i18n:No first name given
+- lastname:
+    factory: label:field:error:text
+    props:
+        label: i18n:Last name
+        required: i18n:No last name given
 - email:
     factory: label:field:error:email
     props:
