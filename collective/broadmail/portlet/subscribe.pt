@@ -10,9 +10,6 @@
       <span class="portletTopRight"></span>
     </dt>
     <dd class="portletItem">
-      <!--form tal:replace="structure view/form_wrapper" /-->
-      <!--tal:subscribe replace="structure context/@@subscriptionform" /-->
-
 
       <!--tal:form replace="structure python:view.controller.rendered" /-->
 

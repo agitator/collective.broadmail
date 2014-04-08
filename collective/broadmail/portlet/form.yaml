@@ -1,28 +1,26 @@
 factory: form
-name: soundcloud_add_edit
+name: subscription_form
 props:
-    action: expr:context.action
-    class: subscription-form enableUnloadProtection
+    action: context.form_action
 widgets:
 - title:
-    factory: field:label:error:text
-    value: expr:context.trackdata['title']
+    factory: label:field:error:text
+    value:
     props:
-        label: Title
-        required: Title needed.
+        label: i18n:Title
+        required: True
+        required_message: No title given
 - description:
-    factory: field:label:error:textarea
-    value: expr:context.trackdata['description']
+    factory: label:field:textarea
+    value:
     props:
-        label: Description
-        help: describe the sound
-        help_class: formHelp
+        label: i18n:Description
         rows: 5
-#- save:
-#    factory: submit
-#    props:
-#        action: save
-#        expression: True
-#        handler: context.save
-#        next: context.next
-#        label: Subscribe
+- save:
+    factory: submit
+    props:
+        action: save
+        expression: True
+        handler: context.save
+        next: context.next
+        label: i18n:Save
