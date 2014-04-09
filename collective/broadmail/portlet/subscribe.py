@@ -17,24 +17,6 @@ class ISubscribeNewsletterPortlet(IPortletDataProvider):
         required=False,
     )
 
-    authcode = TextLine(
-        title=_(u"Broadmail Authorization Code"),
-        default=u"",
-        required=True,
-    )
-
-    opt_in_id = TextLine(
-        title=_(u"Opt-In-Id"),
-        default=u"",
-        required=True,
-    )
-
-    opt_in_source = TextLine(
-        title=_(u"Opt-In-Source"),
-        default=u"",
-        required=False,
-    )
-
 
 class Assignment(base.Assignment):
     implements(ISubscribeNewsletterPortlet)
@@ -42,9 +24,6 @@ class Assignment(base.Assignment):
     def __init__(self, name=u'', authcode=None,
                  opt_in_id=None, opt_in_source=None):
         self.name = name
-        self.authcode = authcode
-        self.opt_in_id = opt_in_id
-        self.opt_in_source = opt_in_source
 
     def title(self):
         return self.name or _(u'Our newsletter')

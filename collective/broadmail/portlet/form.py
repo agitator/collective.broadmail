@@ -3,6 +3,10 @@ import urllib2
 from yafowil.plone.form import YAMLForm
 from collective.broadmail import _
 
+AUTHCODE = 000000
+OPTINID = 000000
+OPTINSOURCE = 'WEBSITE'
+
 
 def perform_request(url, params=None):
     if params:
@@ -21,19 +25,20 @@ class SubscriptionForm(YAMLForm):
     @property
     def salutation_vocab(self):
         return [
-            ('mr', 'Mr.'),
+            ('', ''),
             ('mrs', 'Mrs.'),
+            ('mr', 'Mr.'),
         ]
 
     def subscribe(self, widget, data):
         def fetch(name):
             return data.fetch('subscription_form.%s' % name).extracted
-        url = 'https://api.broadmail.de/http/form/FOO-BAR-S33D/subscribe'
+        url = 'https://api.broadmail.de/http/form/%s/subscribe' % (AUTHCODE)
         params = {
             'bmRecipientId': fetch('email'),
-            'salutation':  fetch('salutation'),
-            'firstname':  fetch('firstname'),
-            'lastname':  fetch('lastname'),
+            'salutation': fetch('salutation'),
+            'firstname': fetch('firstname'),
+            'lastname': fetch('lastname'),
         }
         self.res = perform_request(url, params)
 
