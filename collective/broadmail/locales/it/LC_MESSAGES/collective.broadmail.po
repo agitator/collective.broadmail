@@ -1,0 +1,96 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-04-16 07:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./portlet/subscribe.py:49
+msgid "Add Broadmail Subscription Portlet"
+msgstr ""
+
+#: ./portlet/subscribe.py:61
+msgid "Edit Broadmail Subscribe Portlet"
+msgstr ""
+
+#: ./portlet/form.py:30
+msgid "Mr."
+msgstr "Signore"
+
+#: ./portlet/form.py:29
+msgid "Mrs."
+msgstr "Signora"
+
+#: ./portlet/subscribe.py:15
+msgid "Name of Portlet"
+msgstr ""
+
+#: ./portlet/subscribe.py:29
+msgid "Newsletter"
+msgstr ""
+
+#: ./portlet/subscribe.py:16
+msgid "Subscribe to our Newsletter"
+msgstr "Iscriviti alla nostra newsletter"
+
+#: ./portlet/subscribe.py:50
+msgid "This portlet displays a Broadmail Subscription Portlet."
+msgstr ""
+
+#. Default: "To activate your email address, we will send you an email very shortly.<br> Please confirm your interest by clicking on the link in the email."
+#: ./portlet/success.pt:24
+msgid "subscribe_ok_mail"
+msgstr "Tra pochi istanti ti invieremo un messaggio per la convalida definitiva del tuo indirizzo e-mail.<br> Per confermare il tuo interesse, clicca sul link contenuto in tale messaggio."
+
+#. Default: "Please check that it has reached your inbox and change your security settings if necessary.<br> If you have not received an email, please check your Spam folder."
+#: ./portlet/success.pt:27
+msgid "subscribe_ok_spamfolder"
+msgstr "Controlla la tua casella di Posta in arrivo per verificare la ricezione del messaggio ed eventualmente modifica le impostazioni di sicurezza.<br> Nel caso in cui tu non riceva l'e-mail di convalida, controlla la casella Posta indesiderata."
+
+#. Default: "You have already registered for this newsletter."
+#: ./portlet/duplicate.pt:22
+msgid "subscribe_result_duplicate"
+msgstr "Sei già iscritto/a alla newsletter."
+
+#. Default: "There is an error in your registration details."
+#: ./portlet/failed.pt:22
+msgid "subscribe_result_failed"
+msgstr "Si è verificato un errore all'atto dell'iscrizione."
+
+#. Default: "You have successfully registered with your email address."
+#: ./portlet/success.pt:22
+msgid "subscribe_result_success"
+msgstr "La registrazione del tuo indirizzo e-mail è andata a buon fine."
+
+#. Default: "Registration confirmation"
+#: ./portlet/duplicate.pt:20
+#: ./portlet/failed.pt:20
+#: ./portlet/success.pt:20
+msgid "subscribe_result_title"
+msgstr "Conferma dell'iscrizione"
+
+msgid "subscription_form_email"
+msgstr "E-mail"
+
+msgid "subscription_form_first_name"
+msgstr "Nome"
+
+msgid "subscription_form_last_name"
+msgstr "Cognome"
+
+#: ./portlet/form.yaml
+msgid "subscription_form_salutation"
+msgstr "Titolo"
+
+msgid "subscription_form_subscribe"
+msgstr "Iscriviti"
+
