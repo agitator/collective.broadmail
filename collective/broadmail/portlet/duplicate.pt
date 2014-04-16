@@ -19,7 +19,7 @@
 
     <h1 class="documentFirstHeading" i18n:translate="subscribe_result_title">Registration confirmation</h1>
 
-    <p i18n:translate="subscribe_result_duplicate">You have already registered for this newsletter.</p>
+    <p i18n:translate="subscribe_result_duplicate" style="font-weight: bold">You have already registered for this newsletter.</p>
 
   </tal:main-macro>
 </metal:main>

@@ -19,7 +19,7 @@
 
     <h1 class="documentFirstHeading" i18n:translate="subscribe_result_title">Registration confirmation</h1>
 
-    <p i18n:translate="subscribe_result_success">You have successfully registered with your email address.</p>
+    <p i18n:translate="subscribe_result_success" style="font-weight: bold">You have successfully registered with your email address.</p>
 
     <p i18n:translate="subscribe_ok_mail">To activate your email address, we will send you an email very shortly.<br>
     Please confirm your interest by clicking on the link in the email.</p>
