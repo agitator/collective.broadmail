@@ -26,8 +26,8 @@ class SubscriptionForm(YAMLForm):
     def salutation_vocab(self):
         return [
             ('', ''),
-            ('mrs', 'Mrs.'),
-            ('mr', 'Mr.'),
+            ('mrs', _(u'Mrs.')),
+            ('mr', _(u'Mr.')),
         ]
 
     def subscribe(self, widget, data):

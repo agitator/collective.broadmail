@@ -17,7 +17,15 @@
 <metal:main fill-slot="main">
   <tal:main-macro metal:define-macro="main">
 
-    Success
+    <h1 class="documentFirstHeading" i18n:translate="subscribe_result_title">Registration confirmation</h1>
+
+    <p i18n:translate="subscribe_result_success">You have successfully registered with your email address.</p>
+
+    <p i18n:translate="subscribe_ok_mail">To activate your email address, we will send you an email very shortly.<br>
+    Please confirm your interest by clicking on the link in the email.</p>
+
+    <p i18n:translate="subscribe_ok_spamfolder">Please check that it has reached your inbox and change your security settings if necessary.<br> If you have not received an email, please check your Spam folder.</p>
+
 
   </tal:main-macro>
 </metal:main>

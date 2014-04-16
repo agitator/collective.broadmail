@@ -6,22 +6,22 @@ widgets:
 - salutation:
     factory: label:field:select
     props:
-        label: i18n:Salutation
+        label: i18n:subscription_form_salutation:Salutation
         vocabulary: expr:context.salutation_vocab
 - firstname:
     factory: label:field:error:text
     props:
-        label: i18n:First name
+        label: i18n:subscription_form_first_name:First name
         required: i18n:No first name given
 - lastname:
     factory: label:field:error:text
     props:
-        label: i18n:Last name
+        label: i18n:subscription_form_last_name:Last name
         required: i18n:No last name given
 - email:
     factory: label:field:error:email
     props:
-        label: i18n:Email
+        label: i18n:subscription_form_email:Email
         required: i18n:No email address given
 - save:
     factory: submit
@@ -30,4 +30,4 @@ widgets:
         expression: True
         handler: context.subscribe
         next: context.next
-        label: i18n:Subscribe
+        label: i18n:subscription_form_subscribe:Subscribe

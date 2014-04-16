@@ -17,7 +17,9 @@
 <metal:main fill-slot="main">
   <tal:main-macro metal:define-macro="main">
 
-    Duplicate
+    <h1 class="documentFirstHeading" i18n:translate="subscribe_result_title">Registration confirmation</h1>
+
+    <p i18n:translate="subscribe_result_duplicate">You have already registered for this newsletter.</p>
 
   </tal:main-macro>
 </metal:main>

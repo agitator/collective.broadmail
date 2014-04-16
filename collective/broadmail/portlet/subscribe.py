@@ -13,7 +13,7 @@ class ISubscribeNewsletterPortlet(IPortletDataProvider):
 
     name = TextLine(
         title=_(u"Name of Portlet"),
-        default=u"Subscribe to our Newsletter",
+        default=_(u"Subscribe to our Newsletter"),
         required=False,
     )
 
@@ -26,7 +26,7 @@ class Assignment(base.Assignment):
         self.name = name
 
     def title(self):
-        return self.name or _(u'Our newsletter')
+        return self.name or _(u'Newsletter')
 
 
 class Renderer(base.Renderer):

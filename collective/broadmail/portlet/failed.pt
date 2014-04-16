@@ -17,7 +17,9 @@
 <metal:main fill-slot="main">
   <tal:main-macro metal:define-macro="main">
 
-    Failed
+    <h1 class="documentFirstHeading" i18n:translate="subscribe_result_title">Registration confirmation</h1>
+
+    <p i18n:translate="subscribe_result_failed" style="color: #C11313;">There is an error in your registration details.</p>
 
   </tal:main-macro>
 </metal:main>
