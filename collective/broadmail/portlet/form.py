@@ -3,8 +3,8 @@ import urllib2
 from yafowil.plone.form import YAMLForm
 from collective.broadmail import _
 
-AUTHCODE = 000000
-OPTINID = 000000
+AUTHCODE = '000000'
+OPTINID = '000000'
 OPTINSOURCE = 'WEBSITE'
 
 
@@ -35,6 +35,7 @@ class SubscriptionForm(YAMLForm):
             return data.fetch('subscription_form.%s' % name).extracted
         url = 'https://api.broadmail.de/http/form/%s/subscribe' % (AUTHCODE)
         params = {
+            'bmOptInId': OPTINID,
             'bmRecipientId': fetch('email'),
             'salutation': fetch('salutation'),
             'firstname': fetch('firstname'),
